@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TableComponent } from './components/table/table.component';
 import { FormComponent } from './components/form/form.component';
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -13,9 +17,12 @@ import { FormComponent } from './components/form/form.component';
     NavbarComponent,
     TableComponent,
     FormComponent
+    
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,9 +15,12 @@ export class AlumnosService {
     cuatrimestre: 0,
     promedio: 0
   }
+
   constructor(private http:HttpClient) { }
   getAllStudents(){
     return this.http.get<Alumno[]>(this.URL_API+'getAll');
   }
-  
+  addStudents(alumno:Alumno){
+    return this.http.post(this.URL_API+'insert', alumno);
+  }
 }

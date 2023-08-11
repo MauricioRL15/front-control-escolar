@@ -8,7 +8,7 @@ import { AlumnosService } from 'src/app/services/alumnos.service';
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent  {
-
+ 
   constructor(public alumnosService:AlumnosService){}
 
   ngOnInit(){

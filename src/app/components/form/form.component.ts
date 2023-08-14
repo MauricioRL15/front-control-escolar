@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgForm } from '@angular/forms';
 import { AlumnosService } from 'src/app/services/alumnos.service';
 
 @Component({
@@ -10,5 +10,19 @@ import { AlumnosService } from 'src/app/services/alumnos.service';
 export class FormComponent {
 
   constructor( public studentsService:AlumnosService){}
+
+  addStudent(form:NgForm){
+    this.studentsService.addStudents(form.value).subscribe(
+      res => {
+        this.studentsService.getAllStudents().subscribe(
+          res => {
+            this.studentsService.students = res;
+            console.log(res);
+          }
+        )
+      }, err => console.error(err)
+      
+    )
+  }
 
 }

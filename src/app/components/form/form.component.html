@@ -1,7 +1,7 @@
 <p>Soy el formulario</p>
 <div class="card">
     <div class="card-body">
-        <form NgFor="#studentsForm">
+        <form #studentsForm="ngForm">
             <div class="row">
                 <div class="col-lg-6">
                     <label for="txtMatricula" class="form-label">Matrícula</label>
@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <button class="btn btn-success">Guardar</button>
+                    <button class="btn btn-success" (click)="addStudent(studentsForm)">Guardar</button>
                 </div>
             </div>
         </form>

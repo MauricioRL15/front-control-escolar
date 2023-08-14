@@ -23,4 +23,11 @@ export class AlumnosService {
   addStudents(alumno:Alumno){
     return this.http.post(this.URL_API+'insert', alumno);
   }
+
+  deleteStudent(matricula:String){
+    return this.http.delete(this.URL_API+'deleteOne/'+matricula);
+  }
+
+  
+
 }

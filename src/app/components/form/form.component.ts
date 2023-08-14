@@ -18,7 +18,7 @@ export class FormComponent {
           res => {
             this.studentsService.students = res;
             console.log(res);
-          }
+          }, err => console.error(err)
         )
       }, err => console.error(err)
       

@@ -14,6 +14,7 @@ export class FormComponent {
   addStudent(form:NgForm){
     this.studentsService.addStudents(form.value).subscribe(
       res => {
+        form.reset();
         this.studentsService.getAllStudents().subscribe(
           res => {
             this.studentsService.students = res;
@@ -21,8 +22,24 @@ export class FormComponent {
           }, err => console.error(err)
         )
       }, err => console.error(err)
-      
     )
   }
+
+  updateStudent(form:NgForm){
+    this.studentsService.updateStudent(form.value).subscribe(
+      res => {
+        this.studentsService.update=false;
+        form.reset();
+        this.studentsService.getAllStudents().subscribe(
+          res => {
+            this.studentsService.students = res;
+            console.log(res);
+          }, err => console.error(err)
+        )
+      }, err => console.error(err)
+    )
+  }
+
+  
 
 }

@@ -30,7 +30,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <button class="btn btn-success" (click)="addStudent(studentsForm)">Guardar</button>
+                    <button *ngIf="studentsService.update==false" class="btn btn-success" (click)="addStudent(studentsForm)">Guardar</button>
+                </div>
+                <div class="col-lg-6">
+                    <button *ngIf="studentsService.update==true" class="btn btn-warning" (click)="updateStudent(studentsForm)" >Actualizar</button> 
                 </div>
             </div>
         </form>

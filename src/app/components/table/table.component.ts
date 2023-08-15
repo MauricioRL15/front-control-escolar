@@ -33,6 +33,7 @@ export class TableComponent  {
   
   getStudent(alumno:Alumno){
     this.alumnosService.selectedStudent = alumno;
+    this.alumnosService.update = true;
   }
 
 

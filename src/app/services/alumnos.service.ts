@@ -16,6 +16,8 @@ export class AlumnosService {
     promedio: 0
   }
 
+  update: boolean = false;
+
   constructor(private http:HttpClient) { }
   getAllStudents(){
     return this.http.get<Alumno[]>(this.URL_API+'getAll');
@@ -28,6 +30,8 @@ export class AlumnosService {
     return this.http.delete(this.URL_API+'deleteOne/'+matricula);
   }
 
-  
+  updateStudent(alumno:Alumno){
+    return this.http.put(this.URL_API + 'updateOne/' + alumno.matricula,alumno);
+  }
 
 }
